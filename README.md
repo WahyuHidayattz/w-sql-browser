@@ -1,6 +1,6 @@
 # W-Sql Browser
 
-W-sql Browser (Wahyu SQL Broser) is a web based tools can be used to fetch data from Mysql Server. the main feature of W-sql is light, searchable data, exportable data in CSV format, and organize data export by clients IP address.
+W-sql Browser (Wahyu SQL Browser) is a web based tools can be used to fetch data from Mysql Server. the main feature of W-sql is light, searchable data, exportable data in CSV format, and organize data export by clients IP address.
 
 ### Main Feature :
 - Searchable Data
@@ -27,7 +27,7 @@ W-sql Browser (Wahyu SQL Broser) is a web based tools can be used to fetch data 
             ]
         }
 
-3. If you done, just save it and open in your broser
+3. If you done, just save it and open in your browser
 4. Happy quering
 
 ### Screenshots
