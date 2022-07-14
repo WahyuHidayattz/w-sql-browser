@@ -6,7 +6,7 @@ if (!file_exists("storage/$ip/")) {
 }
 
 // database connection (config your connection in config.json)
-$config = json_decode(file_get_contents("config.json"));
+$config = json_decode(file_get_contents("config.json"), true);
 
 /** Helper functions write below */
 function query($koneksi, $string)

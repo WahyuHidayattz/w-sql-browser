@@ -5,19 +5,19 @@ $data = false;
 $date_init  = date('ym', strtotime("-1 days"));
 $date_init_detail  = date('ymd', strtotime("-1 days"));
 $server = 'Server 225';
-$file_name = 'storage/' . getIpAddress() . "/" . $config->export_file_name;
-$list_connection = $config->list_connection;
+$file_name = 'storage/' . getIpAddress() . "/" . $config["export_file_name"];
+$list_connection = $config["list_connection"];
 $obj_key = 0;
 $con_name = '';
 if (isset($_POST['submit'])) {
     $query = $_POST['input_query'];
     $server = $_POST['input_server'];
     $obj_key = array_search($server, array_column($list_connection, "name"));
-    $con_name = $list_connection[$obj_key]->name;
-    $con_host = $list_connection[$obj_key]->host;
-    $con_user = $list_connection[$obj_key]->user;
-    $con_pass = $list_connection[$obj_key]->pass;
-    $con_db = $list_connection[$obj_key]->db;
+    $con_name = $list_connection[$obj_key]["name"];
+    $con_host = $list_connection[$obj_key]["host"];
+    $con_user = $list_connection[$obj_key]["user"];
+    $con_pass = $list_connection[$obj_key]["pass"];
+    $con_db = $list_connection[$obj_key]["db"];
     $koneksi = mysqli_connect($con_host, $con_user, $con_pass, $con_db);
     $data = query($koneksi, $query);
     if ($data) {
@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
                 <div class="flex flex-col h-auto gap-1 bg-gray-300 bg-[url('squid.png')] bg-cover bg-center items-end justify-end shadow-md">
                     <select name="input_server" class="px-2 py-1 text-xs text-white outline-none bg-gray-800/60">
                         <?php foreach ($list_connection as $list) : ?>
-                            <option <?= $con_name == $list->name ? 'selected' : ''; ?>><?= $list->name; ?></option>
+                            <option <?= $con_name == $list["name"] ? 'selected' : ''; ?>><?= $list["name"]; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
