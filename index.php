@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
         $header = array_keys($data[0]);
         $exported = $data;
         $total_data = count($data);
-        $max_render = 1000 > $total_data ? $total_data : 1000;
+        $max_render = $config["max_render"] > $total_data ? $total_data : $config["max_render"];
         array_unshift($exported, $header);
         writeCSV($exported, $file_name);
     }
@@ -43,8 +43,8 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="assets/tablesorter/css/filter.formatter.min.css">
     <script src="assets/jquery/jquery-ui.min.js"></script>
     <script src="assets/jquery/external/jquery/jquery.js"></script>
-    <script src="assets/tablesorter/js/jquery.tablesorter.min.js"></script>
     <script src="assets/tablesorter/js/jquery.tablesorter.widgets.min.js"></script>
+    <script src="assets/tablesorter/js/jquery.tablesorter.min.js"></script>
     <link rel=" shortcut icon" type="image/png" href="assets/favicon.png" />
     <title>W-Sql (Debug Mode)</title>
 </head>

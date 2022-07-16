@@ -20,6 +20,7 @@ W-sql Browser (Wahyu SQL Browser) is a web based tools can be used to fetch data
 
         {
             "export_file_name" : "exported_data.csv",
+            "max_render" : 1000,
             "list_connection" : [
                 {"name": "Local", "host": "localhost", "user": "wahyu", "pass": "123", "db" : "dev"},
                 {"name": "Linux", "host": "localhost", "user": "wahyu", "pass": "123", "db" : "dev"},
